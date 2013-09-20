@@ -1,0 +1,4 @@
+.vagrant
+*.pyc
+ssh.config
+vagrant_ansible_inventory_default

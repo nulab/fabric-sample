@@ -1,0 +1,12 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+    - name: apt update
+      apt: update_cache=yes
+    - name: ensure default packages
+      apt: pkg={{item}}
+      with_items:
+        - nginx
+        - postgresql
+        - tomcat7
