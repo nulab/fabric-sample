@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from fabric.api import env, run, sudo, task, execute
+from fabric.api import env, run, sudo, task, execute, settings, hide
 from fabric.tasks import Task
 from fabric.colors import red, yellow
 
@@ -101,6 +101,11 @@ class FactoryTask(Task):
             print red('%s is not supported this task' % env.run_environment)
         else :
             print yellow('run %s under %s environment' % (self.name, env.run_environment))
+            if env.run_environment == 'production':
+                args_str = ','.join('{}: {}'.format(*k) for k in enumerate(args))
+                kwargs_str = ','.join('{}: {}'.format(*k) for k in kwargs.items())
+                with settings(hide('running'), warn_only=True):
+                    run('logger -t fabric %s args: [%s] kwargs:[%s]' % (self.name, args_str, kwargs_str))
             runner(*args, **kwargs)
 
 def prod_run(a, b):
@@ -114,14 +119,11 @@ def switch(production=None):
     """
     switch task
     """
-    if production is not None:
-        env.run_environment = 'production'
-    else:
-        env.run_environment = 'stage'
+    env.run_environment = 'production' if production is not None else 'stage'
 
 show_args = FactoryTask({
     'production' : prod_run,
     'stage' : stage_run
-}, 'show args', name='show_args')
+}, 'show args',name='show_args')
 
 
