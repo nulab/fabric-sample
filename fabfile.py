@@ -105,7 +105,7 @@ class FactoryTask(Task):
                 args_str = ','.join('{}: {}'.format(*k) for k in enumerate(args))
                 kwargs_str = ','.join('{}: {}'.format(*k) for k in kwargs.items())
                 with settings(hide('running'), warn_only=True):
-                    run('logger -t fabric %s args: [%s] kwargs:[%s]' % (self.name, args_str, kwargs_str))
+                    run('logger -t fabric %s args:[%s] kwargs:[%s]' % (self.name, args_str, kwargs_str))
             runner(*args, **kwargs)
 
 def prod_run(a, b):

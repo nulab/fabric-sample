@@ -4,7 +4,7 @@ You need to install the following tools to execute this sample
 
 * [Vagrant 1.3](http://docs.vagrantup.com/v2/installation/index.html)
 * [Ansible 1.3](http://www.ansibleworks.com/docs/gettingstarted.html)
-* [Fabric 1.7](http://docs.fabfile.org/en/1.7/#installation)
+* [Fabric 1.8](http://docs.fabfile.org/en/1.7/#installation)
 
 # Setup
 
