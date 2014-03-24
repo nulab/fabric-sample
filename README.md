@@ -1,9 +1,16 @@
+# Fabric task definition examples
+
+This is an example project for the following blog entries.
+
+* [Japanese](http://www.backlog.jp/blog/2013/09/fabric-advanced.html)
+* English (coming soon)
+
 # Requirements
 
 You need to install the following tools to execute this sample
 
-* [Vagrant 1.3](http://docs.vagrantup.com/v2/installation/index.html)
-* [Ansible 1.3](http://www.ansibleworks.com/docs/gettingstarted.html)
+* [Vagrant 1.3 or later](http://docs.vagrantup.com/v2/installation/index.html)
+* [Ansible 1.3 or later](http://docs.ansible.com/intro_installation.html)
 * [Fabric 1.8](http://docs.fabfile.org/en/1.7/#installation)
 
 # Setup
