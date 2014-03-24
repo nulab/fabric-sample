@@ -3,7 +3,7 @@
 This is an example project for the following blog entries.
 
 * [Japanese](http://www.backlog.jp/blog/2013/09/fabric-advanced.html)
-* English (coming soon)
+* [English](http://nulab-inc.com/blog/nulab/advanced-method-define-tasks-fabric/)
 
 # Requirements
 
